@@ -1,0 +1,41 @@
+@import "./variables";
+
+.quote-card {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.hero .quote-card {
+  padding: $padding-xl 0;
+  h3 {
+    font-weight: 400;
+    font-size: $fontSizeLarge;
+    line-height: 2.75rem;
+    text-align: center;
+  }
+  p {
+    font-size: $fontSizeDefault;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+}
+
+.container .quote-card {
+  box-shadow: $shadow;
+  padding: $padding-large;
+  margin: $padding-medium;
+  background-color: $bgColor;
+  h3 {
+    font-size: $fontSizeDefault;
+    letter-spacing: 0.035em;
+    font-weight: 400;
+    line-height: 19px;
+  }
+  p {
+    font-weight: 400;
+    font-size: $fontSizeSmall;
+    line-height: 15px;
+    padding-top: 0;
+  }
+}

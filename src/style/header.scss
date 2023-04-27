@@ -1,0 +1,7 @@
+@import "./variables";
+
+header {
+
+  @include header; 
+  text-align: center;
+}

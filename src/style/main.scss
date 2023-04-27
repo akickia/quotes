@@ -1,0 +1,34 @@
+@import "./quoteCard";
+@import "./variables";
+
+body {
+  font-family: 'Inter';
+  background-color: $bgColorBody;
+}
+article {
+  padding: $padding-large;
+  max-width: 800px;
+  margin: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  padding: $padding-small
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  max-width: 10rem;
+  width: 100%;
+  padding: $padding-large;
+  background-color: $bgColor;
+  font-size: $fontSizeDefault;
+  line-height: 1.5rem;
+  font-family: 'Inter';
+  border-radius: 6px;
+  box-shadow: $shadow;
+  border: none;
+  margin: 1rem
+}
