@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 export default function QuotesContainer() {
   const quotes = useSelector((state) => state.quotes);
 
+  //Get state from store with selector and map to generate cards
   return (
     <article className='container'>
       {

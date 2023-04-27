@@ -6,6 +6,10 @@
   font-weight: 400;
 }
 
+.hero .quote-card a {
+  display: none;
+}
+
 .hero .quote-card {
   padding: $padding-xl 0;
   h3 {

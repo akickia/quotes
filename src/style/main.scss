@@ -1,5 +1,7 @@
 @import "./quoteCard";
 @import "./variables";
+@import "./error";
+@import "./form";
 
 body {
   font-family: 'Inter';
@@ -8,9 +10,13 @@ body {
 article {
   padding: $padding-large;
   max-width: 800px;
+  width: 100%;
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+}
 p, h1, h2, h3, h4, h5, h6 {
   padding: $padding-small
 }
@@ -18,10 +24,13 @@ p, h1, h2, h3, h4, h5, h6 {
 .btns-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: auto;
 }
+
 button {
-  max-width: 10rem;
-  width: 100%;
+  width: 10rem;
   padding: $padding-large;
   background-color: $bgColor;
   font-size: $fontSizeDefault;
@@ -31,4 +40,19 @@ button {
   box-shadow: $shadow;
   border: none;
   margin: 1rem
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+.form-container h3 {
+  font-weight: 400;
+  font-size: $fontSizeMedium;
+  padding-top: $padding-xl;
+  line-height: $fontSizeDefault;
+  text-align: center;
 }

@@ -6,7 +6,7 @@ import { legacy_createStore as createStore } from 'redux'
 import quoteReducer from './redux//reducers/quoteReducer'
 import { Provider } from 'react-redux'
 
-// skapa vår store utefter vår reducer (som har tagit in vårt initiala store)
+// skapa store
 const store = createStore(quoteReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 

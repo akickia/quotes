@@ -1,5 +1,6 @@
 import "../style/header.scss"
 
+//Simle header
 export default function Header() {
   return (
     <header>

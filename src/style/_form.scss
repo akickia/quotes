@@ -1,0 +1,28 @@
+@import "./variables";
+
+form {
+  max-width: 32rem;
+  margin: auto;
+  padding: $padding-large;
+  section {
+    display: flex;
+    flex-direction: column;
+    label {
+      padding-top: $padding-xl;
+    }
+    input {
+      min-height: 2.1875rem;
+      border-radius: 6px;
+      border: none;
+    }
+    textarea {
+      height: 16.5625rem;
+      border: none;
+      resize: none;
+    }
+  }
+}
+
+textarea:focus-visible, input:focus-visible {
+    outline: rgb(194, 191, 191) auto 1px;
+}
