@@ -3,6 +3,7 @@ import Form from '../Components/Form'
 import { Link } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { addQuote } from '../redux/actions/quoteActions'
+import { v4 as uuid } from 'uuid'
 
 //Refactor to component for add + edit
 
@@ -14,9 +15,10 @@ export default function AddQuote() {
   function addNewQuote() {
     let newQuote = {
       author: author,
-      text: quote
+      text: quote,
+      id: uuid()
     }
-    console.log("Adding new quote: " + newQuote)
+    console.log("Adding new quote: " + newQuote.text)
     dispatch(addQuote(newQuote))
   }
   return (

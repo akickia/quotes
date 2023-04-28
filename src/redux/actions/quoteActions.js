@@ -8,12 +8,12 @@ export const addQuote = (newQuote) => ({
   payload: newQuote
 });
 
-export const editQuote = (newValue) => ({
+export const editQuote = (id, field, newValue) => ({
   type: "EDIT_QUOTE",
-  payload: newValue
+  payload: {id, field, newValue}
 });
 
-export const removeQuote = (quote) => ({
+export const removeQuote = (index) => ({
   type: "REMOVE_QUOTE",
-  payload: quote
+  payload: index
 });

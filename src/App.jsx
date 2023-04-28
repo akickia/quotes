@@ -9,9 +9,8 @@ import AddQuote from "./pages/AddQuote";
 import RemoveQuote from "./pages/RemoveQuote";
 import EditQuote from "./pages/EditQuote";
 import Error from "./pages/Error";
-import "./style/main.scss"
-
-
+import "./style/main.scss";
+import { v4 as uuid } from 'uuid';
 
 
 function App() {
@@ -21,8 +20,11 @@ function App() {
   useEffect(() => {
     fetch("https://type.fit/api/quotes")
     .then(response => response.json())
-    .then(data => dispatch(fillQuotes(data.slice(0, 10))))
+    .then(data => {const dataWithIds = data.map(quote => ({ ...quote, id: uuid() }));
+    dispatch(fillQuotes(dataWithIds))})
   }, []);
+
+
 
 
   return (
@@ -30,7 +32,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/remove/:id" element={<RemoveQuote />}></Route>
+        <Route path="/remove" element={<RemoveQuote />}></Route>
         <Route path="/edit/:id" element={<EditQuote />}></Route>
         <Route path="/add" element={<AddQuote />}></Route>
         <Route path="/error" element={<Error />}></Route>

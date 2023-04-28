@@ -6,7 +6,8 @@
   font-weight: 400;
 }
 
-.hero .quote-card a {
+
+.hero .quote-card a, .more-container .quote-card a {
   display: none;
 }
 
@@ -30,6 +31,15 @@
   padding: $padding-large;
   margin: $padding-medium;
   background-color: $bgColor;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 80%;
+  }
   h3 {
     font-size: $fontSizeDefault;
     letter-spacing: 0.035em;
@@ -43,3 +53,13 @@
     padding-top: 0;
   }
 }
+
+.icon {
+  color: gray
+}
+
+.icon:hover {
+  color: black
+}
+
+

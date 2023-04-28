@@ -14,16 +14,18 @@ const quoteReducer = (state = quoteStore, action) => {
             }
             case "EDIT_QUOTE":
                 return {
-                    ...state,
-                quotes: [action.payload.field], newValue,
-                  };
+                  ...state,
+                  quotes: state.quotes.map((quote) =>
+                    quote.id === action.payload.id
+                      ? { ...quote, [action.payload.field]: action.payload.newValue }
+                      : quote
+                  ),
+                };
             case "REMOVE_QUOTE":
-                return state.map(quote => {
-                    if (quote[i] === action.index) {
-                      return { ...state.quotes,  };
-                    }
-                    return dog;
-                  })
+                return {
+                    ...state,
+                quotes: state.quotes.filter((quote, index) => index !== action.payload)
+                }
         default:
             return state
     }

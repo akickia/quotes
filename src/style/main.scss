@@ -17,12 +17,18 @@ article {
 a {
   text-decoration: none;
 }
+
 p, h1, h2, h3, h4, h5, h6 {
   padding: $padding-small
 }
 
+i {
+  color: black;
+}
+
 .btns-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
   max-width: 600px;
