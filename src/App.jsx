@@ -1,7 +1,7 @@
 import Header from "./Components/Header"
 import Footer from "./Components/Footer"
-import Start from "./pages/start"
-import { useState, useEffect } from "react";
+import Start from "./pages/Start"
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fillQuotes } from "./redux/actions/quoteActions";
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
