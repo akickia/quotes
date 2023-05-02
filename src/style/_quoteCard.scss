@@ -1,36 +1,40 @@
 @import "./variables";
 
+//Styling for quotes
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25rem;
+  margin: $large auto
+}
+
 .quote-card {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
 }
 
-
 .hero .quote-card a, .more-container .quote-card a {
   display: none;
 }
 
 .hero .quote-card {
-  padding: $padding-xl 0;
+  padding: $xlarge 0;
   h3 {
     font-weight: 400;
-    font-size: $fontSizeLarge;
-    line-height: 2.75rem;
+    font-size: $xlarge;
     text-align: center;
   }
   p {
-    font-size: $fontSizeDefault;
-    line-height: 1.5rem;
+    font-size: $default;
     text-align: center;
   }
 }
 
 .container .quote-card {
-  box-shadow: $shadow;
-  padding: $padding-large;
-  margin: $padding-medium;
-  background-color: $bgColor;
+  @include box;
+  margin: $medium;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -41,25 +45,24 @@
     max-width: 80%;
   }
   h3 {
-    font-size: $fontSizeDefault;
+    font-size: $default;
     letter-spacing: 0.035em;
     font-weight: 400;
     line-height: 19px;
   }
   p {
     font-weight: 400;
-    font-size: $fontSizeSmall;
+    font-size: $small;
     line-height: 15px;
     padding-top: 0;
   }
 }
 
-.icon {
-  color: gray
-}
-
-.icon:hover {
-  color: black
+.remove-quote {
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: $default;
 }
 
 

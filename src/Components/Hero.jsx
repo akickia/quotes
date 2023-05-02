@@ -4,21 +4,30 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
-  const [heroQuote, setHeroQuote] = useState()
-  const quotes = useSelector((state) => state.quotes);
+  //get quotes from store
+  const quotes = useSelector((state) => state.quotes)
 
-  //Generate random quote for hero, set to state: heroQuote
+  //State for random quote in hero
+  const [heroQuote, setHeroQuote] = useState()
+
+  //Generate useEffect to render random quote
   useEffect(() => {
-    let n = Math.floor(Math.random()*100)
-    setHeroQuote(quotes[n])
+    generateQuote()
   }, [quotes])
 
+  //Function for setting random index for quote
+  const generateQuote = () => {
+    let n = Math.floor(Math.random()*100)
+    setHeroQuote(quotes[n])
+  }
+
   return (
-    <article className='hero'>
+    <section className='hero'>
       <QuoteCard quote={heroQuote} />
       <section className='btns-container'>
-        <Link to="/add"><button>Add quotes</button></Link>
+        <button onClick={() => generateQuote()}>Generate new quote</button>
+        <Link to="/add"><button>Add new quote</button></Link>
       </section>
-    </article>
+    </section>
   )
 }

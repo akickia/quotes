@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 import "../style/header.scss"
 
-//Simle header
+//Simple header
 export default function Header() {
   return (
     <header>
-      <h2>Inspirational quotes</h2>
+      <Link to="/"> <h2>Inspirational quotes</h2></Link>
     </header>
   )
 }

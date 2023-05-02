@@ -3,27 +3,30 @@
 @import "./error";
 @import "./form";
 
+//General styling
 body {
   font-family: 'Inter';
-  background-color: $bgColorBody;
+  background-image: url("https://images.unsplash.com/photo-1629968417850-3505f5180761?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=752&q=80");
+  background-repeat:repeat;
+  background-size: contain;
 }
+
 article {
-  padding: $padding-large;
-  max-width: 800px;
+  padding: $default;
+  max-width: 50rem;
   width: 100%;
   margin: auto;
+  background-color: $bgColorBody;
+  box-shadow: $shadow;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  padding: $padding-small
-}
-
-i {
-  color: black;
+  padding: $small
 }
 
 .btns-container {
@@ -31,19 +34,15 @@ i {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 600px;
-  margin: auto;
+  max-width: 37.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 button {
+  @include box;
   width: 10rem;
-  padding: $padding-large;
-  background-color: $bgColor;
-  font-size: $fontSizeDefault;
-  line-height: 1.5rem;
-  font-family: 'Inter';
   border-radius: 6px;
-  box-shadow: $shadow;
   border: none;
   margin: 1rem
 }
@@ -51,14 +50,16 @@ button {
 button:hover {
   transform: scale(1.05);
 }
+
 button:active {
   transform: scale(0.95);
 }
 
-.form-container h3 {
-  font-weight: 400;
-  font-size: $fontSizeMedium;
-  padding-top: $padding-xl;
-  line-height: $fontSizeDefault;
-  text-align: center;
+.icon {
+  color: gray
 }
+
+.icon:hover {
+  color: black
+}
+

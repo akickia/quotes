@@ -1,7 +1,11 @@
 @import "./variables";
 
 header {
-
-  @include header; 
+  @include box; 
+  background-color: $bgColor;
+  opacity: .8;
+  margin-bottom: $default;
+  font-family: 'Itim', cursive;
+  font-size: $large;
   text-align: center;
 }

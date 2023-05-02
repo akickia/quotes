@@ -12,7 +12,6 @@ import Error from "./pages/Error";
 import "./style/main.scss";
 import { v4 as uuid } from 'uuid';
 
-
 function App() {
   const dispatch = useDispatch();
 
@@ -24,15 +23,12 @@ function App() {
     dispatch(fillQuotes(dataWithIds))})
   }, []);
 
-
-
-
   return (
     //Routing
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/remove" element={<RemoveQuote />}></Route>
+        <Route path="/remove/:id" element={<RemoveQuote />}></Route>
         <Route path="/edit/:id" element={<EditQuote />}></Route>
         <Route path="/add" element={<AddQuote />}></Route>
         <Route path="/error" element={<Error />}></Route>

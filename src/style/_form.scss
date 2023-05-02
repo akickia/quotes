@@ -1,14 +1,22 @@
 @import "./variables";
 
+//Styling for pages with forms
+.form-container h3 {
+  font-weight: 400;
+  font-size: $large;
+  padding-top: $xlarge;
+  text-align: center;
+}
+
 form {
   max-width: 32rem;
   margin: auto;
-  padding: $padding-large;
+  padding: $default;
   section {
     display: flex;
     flex-direction: column;
     label {
-      padding-top: $padding-xl;
+      padding-top: $xlarge;
     }
     input {
       min-height: 2.1875rem;

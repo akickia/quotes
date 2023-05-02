@@ -2,9 +2,12 @@
 
 footer {
   background-color: $bgColor;
-  font-size: $fontSizeDefault;
+  opacity: .8;
+  font-size: $medium;
   text-align: center;
-  padding: $padding-xl;
-  
-  margin-top: auto;
+  padding: $xlarge;
+  margin-top: $default;
+  p:not(:first-child) {
+    padding: 0;
+  }
 }

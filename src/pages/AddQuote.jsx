@@ -1,43 +1,37 @@
-import React, { useState } from 'react'
-import Form from '../Components/Form'
-import { Link } from "react-router-dom"
-import { useDispatch } from 'react-redux'
-import { addQuote } from '../redux/actions/quoteActions'
-import { v4 as uuid } from 'uuid'
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addQuote } from '../redux/actions/quoteActions';
+import { v4 as uuid } from 'uuid';
+import Form from "../Components/Form"
 
-//Refactor to component for add + edit
 
 export default function AddQuote() {
+  //Use dispatch and navigate
   const dispatch = useDispatch()
-  const [author, setAuthor] = useState("");
-  const [quote, setQuote] = useState("");
+  const navigate = useNavigate()
 
-  function addNewQuote() {
+  //States for text and author to create new quote
+  const [text, setText] = useState("");
+  const [author, setAuthor] = useState("");
+
+  //Create new object with new values + id, use dispatch to add to store. 
+  //Navigate to start 
+  const addNewQuote = (e) => {
+    e.preventDefault();
     let newQuote = {
+      text: text,
       author: author,
-      text: quote,
       id: uuid()
     }
-    console.log("Adding new quote: " + newQuote.text)
     dispatch(addQuote(newQuote))
+    navigate("/")
   }
+
   return (
     <article className='form-container add'>
       <h3>Add quote:</h3>
-      <form>
-      <section>
-        <label htmlFor='author'>author:</label>
-        <input onChange={(e) => {setAuthor(e.target.value)}} type="text" id="author" name='author'></input>
-      </section>
-      <section>
-        <label htmlFor='quote'>quote:</label>
-        <textarea onChange={(e) => {setQuote(e.target.value)}} type="text" id="quote" name='quote'></textarea>
-      </section>
-    </form>
-      <section className='btns-container'>
-        <Link to="/"><button onClick={() => addNewQuote()}>Add</button></Link>
-        <Link to="/"><button>Cancel</button></Link>
-      </section>
+      <Form action={(e) => addNewQuote(e)} actionAuthor={(e) => {setAuthor(e.target.value)}} actionText={(e) => {setText(e.target.value)}} />
     </article>
   )
 }

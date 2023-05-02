@@ -1,15 +1,20 @@
+import { Link} from "react-router-dom"
 
-//Form for add/edit
-export default function Form(props) {
+//Form for add/edit with destructured props
+export default function Form({quote, action, actionAuthor, actionText}) {
   return (
-    <form>
+    <form onSubmit={action}>
       <section>
         <label htmlFor='author'>author:</label>
-        <input type="text" id="author" name='author' value={props.quote ? props.quote.author : ''}></input>
+        <input type="text" id="author" name='author'  defaultValue={quote && quote.author} onChange={actionAuthor}></input>
       </section>
       <section>
         <label htmlFor='quote'>quote:</label>
-        <textarea type="text" id="quote" name='quote' value={props.quote ? props.quote.text : ''}></textarea>
+        <textarea type="text" id="quote" name='quote'  defaultValue={quote && quote.text} onChange={actionText}></textarea>
+      </section>
+      <section className='btns-container'>
+        <button type="submit">Save</button>
+        <Link to="/"><button>Cancel</button></Link>
       </section>
     </form>
   )
