@@ -17,7 +17,7 @@ export default function Hero() {
 
   //Function for setting random index for quote
   const generateQuote = () => {
-    let n = Math.floor(Math.random()*100)
+    let n = Math.floor(Math.random()*1000)
     setHeroQuote(quotes[n])
   }
 
