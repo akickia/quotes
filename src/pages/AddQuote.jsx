@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addQuote } from '../redux/actions/quoteActions';
@@ -14,6 +14,11 @@ export default function AddQuote() {
   //States for text and author to create new quote
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
+
+  //Make sure page scrolls to top on render
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   //Create new object with new values + id, use dispatch to add to store. 
   //Navigate to start 

@@ -23,6 +23,11 @@ export default function EditQuote() {
     setQuote(currentQuote)
   }, [state, params.id])
 
+  //Make sure page scrolls to top on render
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   //Create new values for fields with using dispatch and navigate to start
   const handleEdit = (e) => {
     e.preventDefault();

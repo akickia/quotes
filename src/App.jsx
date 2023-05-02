@@ -1,16 +1,16 @@
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fillQuotes } from "./redux/actions/quoteActions";
+import { v4 as uuid } from 'uuid';
 import Header from "./Components/Header"
 import Footer from "./Components/Footer"
 import Start from "./pages/Start"
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fillQuotes } from "./redux/actions/quoteActions";
-import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import AddQuote from "./pages/AddQuote";
 import RemoveQuote from "./pages/RemoveQuote";
 import EditQuote from "./pages/EditQuote";
 import Error from "./pages/Error";
 import "./style/main.scss";
-import { v4 as uuid } from 'uuid';
 
 function App() {
   const dispatch = useDispatch();
@@ -19,8 +19,9 @@ function App() {
   useEffect(() => {
     fetch("https://type.fit/api/quotes")
     .then(response => response.json())
-    .then(data => {const dataWithIds = data.map(quote => ({ ...quote, id: uuid() }));
+    .then(data => {const dataWithIds = data.map(quote => ({ ...quote, id: uuid() }))
     dispatch(fillQuotes(dataWithIds))})
+    .catch(error => console.log(error))
   }, []);
 
   return (

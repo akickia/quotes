@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import QuoteCard from './QuoteCard'
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import QuoteCard from './QuoteCard'
 
 export default function Hero() {
   //get quotes from store

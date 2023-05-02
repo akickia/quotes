@@ -1,7 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { removeQuote } from "../redux/actions/quoteActions"
-import { useState, useEffect } from "react";
 
 export default function RemoveQuote() {
   //Use dispatch and select
@@ -18,6 +18,11 @@ export default function RemoveQuote() {
     let currentQuote = state.find((q) => params.id === q.id)
     setQuote(currentQuote)
   }, [state, params.id])
+
+  //Make sure page scrolls to top on render
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   //Delete quote
   function handleDelete() {
